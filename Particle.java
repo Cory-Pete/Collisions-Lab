@@ -43,7 +43,7 @@ public class Particle {
     public void changeY(double b){
         Y=b;
     }
-    // testing so much shit right now ------------------------------------
+    // testing so much shit right now --------------------------------
     public void changeXi(double x){
         Xi = x;
     }
