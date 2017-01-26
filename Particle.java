@@ -43,6 +43,12 @@ public class Particle {
     public void changeY(double b){
         Y=b;
     }
+    public void changeXi(double x){
+        Xi = x;
+    }
+    public void changeYi(double y){
+        Yi = y;
+    }
     public void changevX(double c){
         vX=c;
     }
