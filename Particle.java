@@ -1,6 +1,7 @@
 /**
  * Created by Sarah on 1/21/2017.
  */
+
 public class Particle {
     double X;
     double Y;
@@ -9,7 +10,12 @@ public class Particle {
     double radius;
     double Yi;
     double Xi;
-    public Particle(double X, double Y, double vX, double vY, double radius){ //position and velocity
+    double mass;
+    int r;
+    int g;
+    int b;
+
+    public Particle(double X, double Y, double vX, double vY, double radius, double mass, int r, int g, int b){ //position and velocity
         this.X=X;
         this.Xi=X;
         this.Y=Y;
@@ -17,6 +23,10 @@ public class Particle {
         this.vX=vX;
         this.vY=vY;
         this.radius=radius;
+        this.mass = mass;
+        this.r = r;
+        this.g=g;
+        this.b=b;
     }
 
     public double getX(){
@@ -37,18 +47,23 @@ public class Particle {
     public double getYi(){
         return Yi;
     }
+    public double getRadius(){
+        return radius;
+    }
+    public int getR(){
+        return r;
+    }
+    public int getG(){
+        return g;
+    }
+    public int getB(){
+        return b;
+    }
     public void changeX(double a){
         X=a;
     }
     public void changeY(double b){
         Y=b;
-    }
-    // testing so much shit right now --------------------------------
-    public void changeXi(double x){
-        Xi = x;
-    }
-    public void changeYi(double y){
-        Yi = y;
     }
     public void changevX(double c){
         vX=c;
@@ -56,6 +71,8 @@ public class Particle {
     public void changevY(double d){
         vY=d;
     }
+    public void changeXi(double e){Xi=e;}
+    public void changeYi(double f){Yi=f;}
 
     public double collidesX(double t){//returns when particle collides with a wall vertically
         double currentT=t;
