@@ -39,16 +39,18 @@ public class TestStdDraw {
             for(int i=0; i<Particles.length;i++) {
 
                 if (Particles[i].getX() >= 1 - 0.05 || Particles[i].getX() <= -1 + 0.05) { //adjusting boundary makes it closer to real boundary but you could miss a collision?
-                    Particles[i].changevX(-1 * Particles[i].getvX());
+                  //  Particles[i].changevX(-1 * Particles[i].getvX());
+                    Particles[i].bounceOffVerticalWall();
                     // System.out.println("Collided with x wall");
                 }
                 if (Particles[i].getY() >= 1 - 0.05 || Particles[i].getY() <= -1 + 0.05) { //make it match bounds
-                    Particles[i].changevY(-1 * Particles[i].getvY());
+                   // Particles[i].changevY(-1 * Particles[i].getvY());
+                    Particles[i].bounceOffHorizontalWall();
                     // System.out.println("collided with y wall");
                 }
-
-                Particles[i].changeX(Particles[i].getX() + deltaT * (Particles[i].getvX()));
-                Particles[i].changeY(Particles[i].getY() + deltaT * (Particles[i].getvY()));
+                Particles[i].move(deltaT);
+               // Particles[i].changeX(Particles[i].getX() + deltaT * (Particles[i].getvX()));
+                //Particles[i].changeY(Particles[i].getY() + deltaT * (Particles[i].getvY()));
 
                 StdDraw.setPenColor(Particles[i].getR(), Particles[i].getG(), Particles[i].getB());
                 StdDraw.filledCircle(Particles[i].getX(), Particles[i].getY(), Particles[i].getRadius());
@@ -60,9 +62,3 @@ public class TestStdDraw {
 
     }
 }
-
-//for(int i , i<=Array.getLength(), i++){
- //   StdDraw.setPenColor(Array[i].getr())
- //       StdDraw.filledCircle...
-//        }
-
