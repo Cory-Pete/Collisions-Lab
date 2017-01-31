@@ -6,7 +6,7 @@ public class PQsort  {
     public double clockTime = 0.0;
     public Particle[] particles;
     public PQsort(Particle[] particles){
-        //generates this code
+        this.particles=particles;
     }
     public double compare(Collision one, Collision two){
         return two.getTime()-one.getTime();
